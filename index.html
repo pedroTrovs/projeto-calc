@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Basic calculator</h1>
+    <form action="">
+        n1: <input type="text" id="txtN1">
+
+        <select id="cmbOp">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="X">X</option>
+            <option value="/">/</option>
+        </select>
+
+        n2: <input type="text" id="txtN2">
+        <button type="button" onclick="sum()">Somar</button>
+        Resultado: <input type="text" id="txtR">
+    </form>
+</body>
+
+<script>
+    function sum()
+    {
+        let n1 = parseFloat(document.getElementById("txtN1").value);
+        let n2 = parseFloat(document.getElementById("txtN2").value);
+        let ops = document.getElementById("cmbOp");
+        let select = ops.options[ops.selectedIndex].value;
+        var r;
+        switch(select)
+        {
+            case '+':
+                r = n1 + n2;
+                break;
+
+            case '-':
+                r = n1 - n2;
+                break;
+
+            case 'X':
+                r = n1 * n2;
+                break;
+
+            case '/':
+                r = n1 /n2;
+                break;
+
+
+        }
+        document.getElementById("txtR").value = r;
+    }
+</script>
+</html>
